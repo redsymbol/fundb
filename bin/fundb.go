@@ -1,7 +1,12 @@
 package main
 
-import "fundb/shell"
+import (
+	"fundb/client"
+	"fundb/shell"
+	"fundb/constants"
+)
 
 func main() {
-	shell.Start()
+	cl := client.Client{Port:constants.DEFAULT_PORT}
+	shell.Start(cl)
 }
