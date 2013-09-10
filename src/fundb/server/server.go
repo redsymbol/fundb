@@ -11,7 +11,7 @@ func handleConnection(conn net.Conn) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(bytes)
+	fmt.Println(string(bytes))
 }
 
 func Start(port int) {
@@ -19,10 +19,11 @@ func Start(port int) {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Listening on port: ", port)
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
-			continue
+			panic(err)
 		}
 		go handleConnection(conn)
 	}

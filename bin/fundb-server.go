@@ -1,9 +1,10 @@
 package main
 
-import "fundb/server"
-
-const PORT = 8042
+import (
+	"fundb/server"
+	"fundb/constants"
+)
 
 func main() {
-	server.Start(PORT)
+	server.Start(constants.DEFAULT_PORT)
 }
